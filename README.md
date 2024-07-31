@@ -50,3 +50,13 @@ In the intial data preparation phase, we performed the following tasks:
 - What room type has the most occupancy rate?
 - What is the Customer retention rate trend of the business?
     - Quarterly, Yearly.
+
+
+### Data Analysis
+
+```sql
+SELECT
+    *
+FROM revenu_table;
+```
+
