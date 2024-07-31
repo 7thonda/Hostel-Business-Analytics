@@ -19,6 +19,5 @@ The dataset used for this analysis is "Finance_table".
 
 Investment Data: This dataset contains detailed records of all capital expenditures aimed at enhancing the value and operational efficiency of the business. It also records returns on investment. The dataset used for this analysis is "Investement_table.csv".
 
-Customer occupancy and retention rate Data: These datasets contains the details of the occupancy rate of ecah room per month and year and 
-
+Customer occupancy and retention rate Data: These datasets provide detailed information on the occupancy rate and retention rate for each room, tracked on a monthly and yearly basis. The datasets used for this analysis are "Occupancy_rate.csv" and "Customer_retention_rate.csv."
 
