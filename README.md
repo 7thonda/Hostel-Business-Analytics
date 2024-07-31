@@ -21,3 +21,8 @@ Investment Data: This dataset contains detailed records of all capital expenditu
 
 Customer occupancy and retention rate Data: These datasets provide detailed information on the occupancy rate and retention rate for each room, tracked on a monthly and yearly basis. The datasets used for this analysis are "Occupancy_rate.csv" and "Customer_retention_rate.csv."
 
+
+## Tools
+- Excel : This was used for the data cleaning.
+- SQL Server: This was used for quering and data analysis.
+- Power BI: This was used in creating the vizualizations of this analysis.
