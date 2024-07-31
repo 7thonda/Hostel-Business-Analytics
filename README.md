@@ -30,12 +30,7 @@ Customer occupancy and retention rate Data: These datasets provide detailed info
 - Power BI: This was used to create vizualizations for the analysis.
 
 ### Data Cleaning and Preparation
-
-
-
-
-
-## Tools
-- Excel : This was used for the data cleaning.
-- SQL Server: This was used for quering and data analysis.
-- Power BI: This was used in creating the vizualizations of this analysis.
+In the intial data preparation phase, we performed the following tasks:
+1. Data loading and Inspection.
+2. Handling missing values.
+3. Data cleaning and Formating.
