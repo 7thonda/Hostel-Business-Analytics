@@ -8,6 +8,7 @@
 - [Exploratory Data Analysis](#exploratory-data-analysis)
 - [Data Analysis](#data-analysis)
 - [Data Vizualizations](#data-vizualizations)
+  
   -[Up to date and interactive Viz](#tools)
 - [Result and Findings](#results-and-findings)
 - [Recommendations](#recommendations)
