@@ -75,10 +75,57 @@ In the intial data preparation phase, we performed the following tasks:
 
 ### Data Analysis
 
+### This calculates the total revenue, gross expense and profit per year
+
 ```sql
-SELECT
-    *
-FROM revenu_table;
+#This CTE calculates the total reveue generated per fiscal year
+WITH Revenue_calculation AS (
+    SELECT 
+        CASE
+            WHEN MONTH(Date_credited) >= 8 THEN YEAR(Date_credited)
+            ELSE YEAR(Date_credited) - 1
+        END AS Fiscal_year,
+        SUM(rt.Amount_paid) AS Total_revenue
+    FROM revenue_table AS rt
+    JOIN tenure_table AS tt
+    ON rt.Payment_ID = tt.Payment_ID
+    GROUP BY Fiscal_year
+),
+#This CTE calculates the total operation costs generated per fiscal year
+Operation_Expenses AS (
+    SELECT 
+        CASE
+            WHEN MONTH(Date) >= 8 THEN YEAR(Date)
+            ELSE YEAR(Date) - 1
+        END AS Fiscal_year,
+        SUM(Amount) AS OP_expense
+    FROM operation_table
+    GROUP BY Fiscal_year
+),
+#This CTE calculates the total Maintenance costs generated per fiscal year
+Maintenance_Expenses AS (
+    SELECT 
+        CASE
+            WHEN MONTH(Date) >= 8 THEN YEAR(Date)
+            ELSE YEAR(Date) - 1
+        END AS Fiscal_year,
+        SUM(Amount) AS MT_expenses
+    FROM maintenance__table
+    GROUP BY Fiscal_year
+)
+# This expressed the Total revenue, Total gross expenses(operation and maintenance) and the Gross profit by Joining all the CTE with Fiscal year.
+SELECT 
+    rc.Fiscal_year,
+    rc.Total_revenue,
+    COALESCE(oe.OP_expense, 0) + COALESCE(me.MT_expenses, 0) AS gross_expenses,
+    rc.Total_revenue - (COALESCE(oe.OP_expense, 0) + COALESCE(me.MT_expenses, 0)) AS gross_profit
+FROM 
+    Revenue_calculation rc
+LEFT JOIN Operation_Expenses oe
+    ON rc.Fiscal_year = oe.Fiscal_year
+LEFT JOIN Maintenance_Expenses me
+    ON rc.Fiscal_year = me.Fiscal_year
+ORDER BY rc.Fiscal_year;
 ```
 ### Data Vizualizations
 
