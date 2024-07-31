@@ -59,7 +59,6 @@ In the intial data preparation phase, we performed the following tasks:
 ### Exploratory Data Analysis
 - What is the overall Revenue and profit generation trend?.
     - Monthly, Quarterly and Yearly.
-- The overall top paying clients and the rooms they occupy.
 - What is the overall Expenses trend?.
   - Monthly, Quarterly and Yearly.
 - What are the peak period for Revenue and profit generation?.
@@ -71,9 +70,132 @@ In the intial data preparation phase, we performed the following tasks:
 - What room type has the most occupancy rate?
 - What is the Customer retention rate trend of the business?
     - Quarterly, Yearly.
+- The overall top paying clients and the rooms they occupy.
 
 
 ### Data Analysis
+#### This calculates the total revenue, gross expense and profit per month
+```sql
+#This CTE calculates the total reveue generated per month
+WITH Revenue_calculation AS (
+    SELECT 
+        CASE
+            WHEN MONTH(Date_credited) >= 8 THEN CONCAT(YEAR(Date_credited), '-', LPAD(MONTH(Date_credited), 2, '0'))
+            ELSE CONCAT(YEAR(Date_credited) - 1, '-', LPAD(MONTH(Date_credited), 2, '0'))
+        END AS Fiscal_month,
+        SUM(rt.Amount_paid) AS Total_revenue
+    FROM revenue_table AS rt
+    JOIN tenure_table AS tt
+    ON rt.Payment_ID = tt.Payment_ID
+    GROUP BY 
+        CASE
+            WHEN MONTH(Date_credited) >= 8 THEN CONCAT(YEAR(Date_credited), '-', LPAD(MONTH(Date_credited), 2, '0'))
+            ELSE CONCAT(YEAR(Date_credited) - 1, '-', LPAD(MONTH(Date_credited), 2, '0'))
+        END
+),
+
+#This CTE calculates the operational cost per month
+Operation_Expenses AS (
+    SELECT 
+        CASE
+            WHEN MONTH(Date) >= 8 THEN CONCAT(YEAR(Date), '-', LPAD(MONTH(Date), 2, '0'))
+            ELSE CONCAT(YEAR(Date) - 1, '-', LPAD(MONTH(Date), 2, '0'))
+        END AS Fiscal_month,
+        SUM(Amount) AS OP_expense
+    FROM operation_table
+    GROUP BY 
+        CASE
+            WHEN MONTH(Date) >= 8 THEN CONCAT(YEAR(Date), '-', LPAD(MONTH(Date), 2, '0'))
+            ELSE CONCAT(YEAR(Date) - 1, '-', LPAD(MONTH(Date), 2, '0'))
+        END
+),
+#This CTE calculates the maintenance cost per month
+Maintenance_Expenses AS (
+    SELECT 
+        CASE
+            WHEN MONTH(Date) >= 8 THEN CONCAT(YEAR(Date), '-', LPAD(MONTH(Date), 2, '0'))
+            ELSE CONCAT(YEAR(Date) - 1, '-', LPAD(MONTH(Date), 2, '0'))
+        END AS Fiscal_month,
+        SUM(Amount) AS MT_expenses
+    FROM maintenance__table
+    GROUP BY 
+        CASE
+            WHEN MONTH(Date) >= 8 THEN CONCAT(YEAR(Date), '-', LPAD(MONTH(Date), 2, '0'))
+            ELSE CONCAT(YEAR(Date) - 1, '-', LPAD(MONTH(Date), 2, '0'))
+        END
+)
+# This expressed the Total revenue, Total gross expenses(operation and maintenance) and the Gross profit by Joining all the CTE with Fiscal_Month
+SELECT 
+    rc.Fiscal_month,
+    rc.Total_revenue,
+    COALESCE(oe.OP_expense, 0) + COALESCE(me.MT_expenses, 0) AS gross_expenses,
+    rc.Total_revenue - (COALESCE(oe.OP_expense, 0) + COALESCE(me.MT_expenses, 0)) AS gross_profit
+FROM 
+    Revenue_calculation rc
+LEFT JOIN Operation_Expenses oe
+    ON rc.Fiscal_month = oe.Fiscal_month
+LEFT JOIN Maintenance_Expenses me
+    ON rc.Fiscal_month = me.Fiscal_month
+ORDER BY rc.Fiscal_month;
+```
+
+#### This calculates the total revenue, gross expense and profit per quarter
+```sql
+#This CTE calculates the total reveue generated per quarter
+WITH Revenue_calculation AS (
+    SELECT 
+        CASE
+            WHEN MONTH(Date_credited) IN (8, 9, 10) THEN CONCAT(YEAR(Date_credited), '-Q1')
+            WHEN MONTH(Date_credited) IN (11, 12, 1) THEN CONCAT(YEAR(Date_credited) - CASE WHEN MONTH(Date_credited) = 1 THEN 1 ELSE 0 END, '-Q2')
+            WHEN MONTH(Date_credited) IN (2, 3, 4) THEN CONCAT(YEAR(Date_credited) - 1, '-Q3')
+            ELSE CONCAT(YEAR(Date_credited) - 1, '-Q4')
+        END AS Fiscal_quarter,
+        SUM(rt.Amount_paid) AS Total_revenue
+    FROM revenue_table AS rt
+    JOIN tenure_table AS tt
+    ON rt.Payment_ID = tt.Payment_ID
+    GROUP BY Fiscal_quarter
+),
+#This CTE calculates the operation cost per quarter
+Operation_Expenses AS (
+    SELECT 
+        CASE
+            WHEN MONTH(Date) IN (8, 9, 10) THEN CONCAT(YEAR(Date), '-Q1')
+            WHEN MONTH(Date) IN (11, 12, 1) THEN CONCAT(YEAR(Date) - CASE WHEN MONTH(Date) = 1 THEN 1 ELSE 0 END, '-Q2')
+            WHEN MONTH(Date) IN (2, 3, 4) THEN CONCAT(YEAR(Date) - 1, '-Q3')
+            ELSE CONCAT(YEAR(Date) - 1, '-Q4')
+        END AS Fiscal_quarter,
+        SUM(Amount) AS OP_expense
+    FROM operation_table
+    GROUP BY Fiscal_quarter
+),
+#This CTE calculates the maintenance cost per quarter
+Maintenance_Expenses AS (
+    SELECT 
+        CASE
+            WHEN MONTH(Date) IN (8, 9, 10) THEN CONCAT(YEAR(Date), '-Q1')
+            WHEN MONTH(Date) IN (11, 12, 1) THEN CONCAT(YEAR(Date) - CASE WHEN MONTH(Date) = 1 THEN 1 ELSE 0 END, '-Q2')
+            WHEN MONTH(Date) IN (2, 3, 4) THEN CONCAT(YEAR(Date) - 1, '-Q3')
+            ELSE CONCAT(YEAR(Date) - 1, '-Q4')
+        END AS Fiscal_quarter,
+        SUM(Amount) AS MT_expenses
+    FROM maintenance__table
+    GROUP BY Fiscal_quarter
+)
+# This expressed the Total revenue, Total gross expenses(operation and maintenance) and the Gross profit by Joining all the CTE with Fiscal_Quarter
+SELECT 
+    rc.Fiscal_quarter,
+    rc.Total_revenue,
+    COALESCE(oe.OP_expense, 0) + COALESCE(me.MT_expenses, 0) AS gross_expenses,
+    rc.Total_revenue - (COALESCE(oe.OP_expense, 0) + COALESCE(me.MT_expenses, 0)) AS gross_profit
+FROM 
+    Revenue_calculation rc
+LEFT JOIN Operation_Expenses oe
+    ON rc.Fiscal_quarter = oe.Fiscal_quarter
+LEFT JOIN Maintenance_Expenses me
+    ON rc.Fiscal_quarter = me.Fiscal_quarter
+ORDER BY rc.Fiscal_quarter;
+```
 
 #### This calculates the total revenue, gross expense and profit per year
 
@@ -127,6 +249,67 @@ LEFT JOIN Maintenance_Expenses me
     ON rc.Fiscal_year = me.Fiscal_year
 ORDER BY rc.Fiscal_year;
 ```
+#### This is the top 5 expenses in both mainteance and operation cost.
+```sql
+# this Code groups the maintenace costs and operation costs and brings out the top 5 from each expense group
+(
+    SELECT 
+        'Maintenance' AS Cost_Type,
+        Maintenance AS Category,
+        SUM(Amount) AS Total_Cost
+    FROM hostel_analysis.maintenance__table
+    GROUP BY Maintenance
+    ORDER BY Total_Cost DESC
+    LIMIT 5
+)
+
+UNION ALL
+
+(
+    SELECT
+        'Operation' AS Cost_Type,
+        Description AS Category,
+        SUM(Amount) AS Total_Cost
+    FROM operation_table
+    GROUP BY Description
+    ORDER BY Total_Cost DESC
+    LIMIT 5
+)
+
+ORDER BY Total_Cost DESC;
+```
+
+#### total revenue generated per room
+```sql
+SELECT 
+	room_type,
+    SUM(Amount_paid) AS total_revenue
+ FROM hostel_analysis.revenue_table
+ GROUP BY room_type
+ ORDER BY total_revenue DESC ;
+```
+###This codes include the Total occupancy rate, Average occupancy rate per month and average occupancy rate per room.
+```sql
+#This is the total average occupancy rate of the entire hostel
+SELECT 
+  AVG(Average_rate)
+FROM occupancy_rate;
+
+#This is the average occupancy rate per month of the entire hostel
+SELECT
+  months,
+  AVG(Average_rate) AS average_occupancy_rate
+FROM occupancy_rate
+GROUP BY months
+ORDER BY average_occupancy_rate DESC;
+
+#This is the average occupancy rate per room
+SELECT 
+	AVG(2_man_room_up) 2_man_room_up ,
+	AVG( 2_man_room_down) 2_man_room_down,
+	AVG(4_man_room) 4_man_room
+FROM hostel_analysis.occupancy_rate;
+```
 ### Data Vizualizations
 
 #### **Reveue Dashboard viz**
@@ -160,6 +343,7 @@ Based on the analysis I recommend the following actions:
 
 
 ## Limitations
+1. The Fiscal year starts in August not January.
 I had to remove all zero values from budget and revenue columns because they would have affected the accuracy of my conclusions from the analysis, There are still a few outliers even after the omission even then we can still that there is a positive correlation between both budget and number of votes with revenue.
 
 ## References
