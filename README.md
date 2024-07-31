@@ -6,7 +6,7 @@ This repository provides a comprehensive analysis of the business health of the 
 ## Data Source
 A number of datasets was used to carry out this anaysis and they are as follows:
 
-Revenue Data: This dataset comprises all revenue generated from payments made by clients. It provides a detailed record of the hostel's income. The dataset used for this analysis is the "Revenue_table.csv" file.
+Revenue Data: This dataset comprises all revenue generated from payments made by clients. It provides a detailed record of the hostel's income. The dataset used for this analysis is the [Revenue_table.csv](https://drive.google.com/file/d/19bkwPs4hOxb06chCvXqvAKxwI4VY3yUi/view?usp=drive_link) file.
 
 Tenure Data: The Primary dataset used for this analysis is the "Tenure_table.csv" file. This dataset has the records of the date of payment and the duration of stay of each client.
 
