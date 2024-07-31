@@ -10,8 +10,14 @@ Revenue Data: This dataset contains all the money being paid in as rent by the c
 
 Tenure Data: The Primary dataset used for this analysis is the "Tenure_table.csv" file. This dataset has the records of the date of payment and the duration of stay of each client.
 
-Operation Data: This dataset contains all the expenses made on keeping the business running, e.g the Light bill. the primary dataset used for this analysis is "Operation_table.csv"
+Operation Data: This dataset contains all the expenses made on keeping the business running, e.g the Light bill. the primary dataset used for this analysis is "Operation_table.csv".
 
+Maintenance Data: This dataset contains all the expenses made on mataining the infracstructure if the business, e.g Maintaining the Generator, Air conditioner, etc. The dataset used for this analysis is "Maintenance_table.csv"
+
+Finance Data: This dataset has records of all the monies that leaves and enters the business that do not have any direct effect to operation of the business. e.g paying of investors and employees, legal fees, etc.
+The dataset used for this analysis is "Finance_table".
+
+Investment Data: This dataset 
 
 
 
