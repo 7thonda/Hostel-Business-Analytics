@@ -40,11 +40,13 @@ In the intial data preparation phase, we performed the following tasks:
 ### Exploratory Data Analysis (EDA)
 - What is the overall Revenue and profit generation trend?.
     - Monthly, Quarterly and Yearly.
+- The overall top paying clients and the rooms they occupy.
 - What is the overall Expenses trend?.
   - Monthly, Quarterly and Yearly.
 - What are the peak period for Revenue and profit generation?.
    - Monthly, Quarterly and Yearly.
 - What comprises as the peak cost in expenses?.
+- What room generates the most and the least amount of revenue?
 - What is the occupancy trend for each room?
   - Monthly, Quarterly and Yearly.
 - What room type has the most occupancy rate?
@@ -60,3 +62,24 @@ SELECT
 FROM revenu_table;
 ```
 
+### Result and Findings
+
+The analysis results are summarized as follows:
+1. the company's sales has been steadily increasing over the past year, with a noticeable peak during the holiday.
+2. Product cateogry A is the best performing ctegory in terms of sales and revenue
+3. customer segments with high lifetime valueshould be targeted for marketing purposes.
+
+
+## Recommendatioons
+
+Based on the analysis I recommend the following actions:
+1. Invest in marketing and promotion during peak sales season to maximize revenue.
+2. Focus and expanding and promoting products in category A.
+3. implement a customer segmentation strategy to target high LTV customers effectively.
+
+
+## Limitations
+I had to remove all zero values from budget and revenue columns because they would have affected the accuracy of my conclusions from the analysis, There are still a few outliers even after the omission even then we can still that there is a positive correlation between both budget and number of votes with revenue.
+
+## References
+1. customer retention rate
