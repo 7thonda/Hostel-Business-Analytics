@@ -75,7 +75,7 @@ In the intial data preparation phase, we performed the following tasks:
 
 ### Data Analysis
 
-### This calculates the total revenue, gross expense and profit per year
+#### This calculates the total revenue, gross expense and profit per year
 
 ```sql
 #This CTE calculates the total reveue generated per fiscal year
