@@ -1,5 +1,7 @@
 # Hostel-Business-Analytics
 
+## Table of Contents
+- [Project Overview](#project-overview)
 
 ## Project Overview
 This repository provides a comprehensive analysis of the business health of the House of Athena hostel. It covers key aspects such as revenue generation, expenses, and occupancy rates. By offering insights into past performance, current status, and future projections, this analysis aims to present a holistic view of the hostel's overall performance.
@@ -28,6 +30,7 @@ Customer occupancy and retention rate Data: These datasets provide detailed info
 - Excel : This was used for the data entries and cleaning.
 - SQL server : This was used for querying and analysis.
 - Power BI: This was used to create vizualizations for the analysis.
+  - [click to access ViZ](https://app.powerbi.com/links/BiZbVzzbCW?ctid=5fe78ac1-1afe-4009-aa04-a71efb4a5042&pbi_source=linkShare)
 
 ### Data Cleaning and Preparation
 In the intial data preparation phase, we performed the following tasks:
