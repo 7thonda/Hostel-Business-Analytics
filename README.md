@@ -9,7 +9,7 @@
 - [Data Analysis](#data-analysis)
 - [Data Vizualizations](#data-vizualizations)
   
-  -[Up to date and interactive Viz](#power-bi)
+  -[Up to date and interactive Viz](#tools)
 - [Result and Findings](#results-and-findings)
 - [Recommendations](#recommendations)
 - [Limitations](#limitations)
