@@ -6,7 +6,7 @@ This repository provides a comprehensive analysis of the business health of the 
 ## Data Source
 A number of datasets was used to carry out this anaysis and they are as follows:
 
-Revenue Data: This dataset contains all the money being paid in as rent by the clients. The dataset used for this analysis is the "Revenue_table.csv" file.
+Revenue Data: This dataset comprises all revenue generated from payments made by clients. It provides a detailed record of the hostel's income. The dataset used for this analysis is the "Revenue_table.csv" file.
 
 Tenure Data: The Primary dataset used for this analysis is the "Tenure_table.csv" file. This dataset has the records of the date of payment and the duration of stay of each client.
 
@@ -17,7 +17,8 @@ Maintenance Data: This dataset contains all the expenses made on mataining the i
 Finance Data: This dataset has records of all the monies that leaves and enters the business that do not have any direct effect to operation of the business. e.g paying of investors and employees, legal fees, etc.
 The dataset used for this analysis is "Finance_table".
 
-Investment Data: This dataset 
+Investment Data: This dataset contains detailed records of all capital expenditures aimed at enhancing the value and operational efficiency of the business. It also records returns on investment. The dataset used for this analysis is "Investement_table.csv".
 
+Customer occupancy and retention rate Data: These datasets contains the details of the occupancy rate of ecah room per month and year and 
 
 
