@@ -1,7 +1,9 @@
 # Hostel-Business-Analytics
 
+
 ## Project Overview
 This repository provides a comprehensive analysis of the business health of the House of Athena hostel. It covers key aspects such as revenue generation, expenses, and occupancy rates. By offering insights into past performance, current status, and future projections, this analysis aims to present a holistic view of the hostel's overall performance.
+
 
 ## Data Source
 A number of datasets was used to carry out this anaysis and they are as follows:
@@ -20,6 +22,17 @@ The dataset used for this analysis is [Finance_table](https://drive.google.com/f
 Investment Data: This dataset contains detailed records of all capital expenditures aimed at enhancing the value and operational efficiency of the business. It also records returns on investment. The dataset used for this analysis is [Investement_table.csv](https://drive.google.com/file/d/1YArxUr8GU59ypcyQV8bk6Z9pifNj3Vfs/view?usp=drive_link).
 
 Customer occupancy and retention rate Data: These datasets provide detailed information on the occupancy rate and retention rate for each room, tracked on a monthly and yearly basis. The datasets used for this analysis are [Occupancy_rate.csv](https://drive.google.com/file/d/1z-HXOb7ubJEkQss53EAcsgphFHl45m4y/view?usp=drive_link) and [Customer_retention_rate.csv](https://drive.google.com/file/d/1eg3uPCL34AeVhePCOw9GiHbIb8bq8Ur8/view?usp=drive_link)."
+
+
+## Tools
+- Excel : This was used for the data inputs and cleaning.
+- SQL server : This was used for querying and analysis.
+- Power BI: This was used to create vizualizations for the analysis.
+
+### Data Cleaning and Preparation
+
+
+
 
 
 ## Tools
