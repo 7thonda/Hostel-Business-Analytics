@@ -18,6 +18,8 @@
 This repository provides a comprehensive analysis of the business health of the House of Athena hostel. It covers key aspects such as revenue generation, expenses, and occupancy rates. By offering insights into past performance, current status, and future projections, this analysis aims to present a holistic view of the hostel's overall performance.
 
 
+![Screenshot_31-7-2024_18410_](https://github.com/user-attachments/assets/58fa135d-13eb-47d3-8b09-bf3811e8a733)
+
 ## Data Source
 A number of datasets was used to carry out this anaysis and they are as follows:
 
@@ -75,6 +77,11 @@ SELECT
     *
 FROM revenu_table;
 ```
+### Vizualizations
+
+
+![Uploading Screenshot_31-7-2024_184152_.jpeg…]()
+
 
 ### Result and Findings
 
