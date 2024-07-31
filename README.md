@@ -2,6 +2,15 @@
 
 ## Table of Contents
 - [Project Overview](#project-overview)
+- [Data Source](#data-source)
+- [Tools](#tools)
+- [Data Cleaning and Preparation](#data-cleaning-and-preparation)
+- [Exploratory Data Analysis](#exploratory-data-analysis)
+- [Data Analysis](#data-analysis)
+- [Result and Findings](#results-and-findings)
+- [Recommendations](#recommendations)
+- [Limitations](#limitations)
+- [References](#references)
 
 ## Project Overview
 This repository provides a comprehensive analysis of the business health of the House of Athena hostel. It covers key aspects such as revenue generation, expenses, and occupancy rates. By offering insights into past performance, current status, and future projections, this analysis aims to present a holistic view of the hostel's overall performance.
@@ -30,7 +39,7 @@ Customer occupancy and retention rate Data: These datasets provide detailed info
 - Excel : This was used for the data entries and cleaning.
 - SQL server : This was used for querying and analysis.
 - Power BI: This was used to create vizualizations for the analysis.
-  - [click to access ViZ](https://app.powerbi.com/links/BiZbVzzbCW?ctid=5fe78ac1-1afe-4009-aa04-a71efb4a5042&pbi_source=linkShare)
+  - [click for Interactive Viz](https://app.powerbi.com/links/BiZbVzzbCW?ctid=5fe78ac1-1afe-4009-aa04-a71efb4a5042&pbi_source=linkShare)
 
 ### Data Cleaning and Preparation
 In the intial data preparation phase, we performed the following tasks:
@@ -40,7 +49,7 @@ In the intial data preparation phase, we performed the following tasks:
 4. Data cleaning and Formating.
 
 
-### Exploratory Data Analysis (EDA)
+### Exploratory Data Analysis
 - What is the overall Revenue and profit generation trend?.
     - Monthly, Quarterly and Yearly.
 - The overall top paying clients and the rooms they occupy.
@@ -73,7 +82,7 @@ The analysis results are summarized as follows:
 3. customer segments with high lifetime valueshould be targeted for marketing purposes.
 
 
-## Recommendatioons
+## Recommendations
 
 Based on the analysis I recommend the following actions:
 1. Invest in marketing and promotion during peak sales season to maximize revenue.
