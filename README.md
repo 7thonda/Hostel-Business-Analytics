@@ -25,12 +25,28 @@ Customer occupancy and retention rate Data: These datasets provide detailed info
 
 
 ## Tools
-- Excel : This was used for the data inputs and cleaning.
+- Excel : This was used for the data entries and cleaning.
 - SQL server : This was used for querying and analysis.
 - Power BI: This was used to create vizualizations for the analysis.
 
 ### Data Cleaning and Preparation
 In the intial data preparation phase, we performed the following tasks:
-1. Data loading and Inspection.
+1. Data entry and Inspection.
 2. Handling missing values.
-3. Data cleaning and Formating.
+3. Creating new tables
+4. Data cleaning and Formating.
+
+
+### Exploratory Data Analysis (EDA)
+- What is the overall Revenue and profit generation trend?.
+    - Monthly, Quarterly and Yearly.
+- What is the overall Expenses trend?.
+  - Monthly, Quarterly and Yearly.
+- What are the peak period for Revenue and profit generation?.
+   - Monthly, Quarterly and Yearly.
+- What comprises as the peak cost in expenses?.
+- What is the occupancy trend for each room?
+  - Monthly, Quarterly and Yearly.
+- What room type has the most occupancy rate?
+- What is the Customer retention rate trend of the business?
+    - Quarterly, Yearly.
