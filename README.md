@@ -69,7 +69,6 @@ In the intial data preparation phase, we performed the following tasks:
   - Monthly, Quarterly and Yearly.
 - What room type has the most occupancy rate?
 - What is the Customer retention rate trend of the business?
-    - Quarterly, Yearly.
 - The overall top paying clients and the rooms they occupy.
 
 
@@ -283,12 +282,12 @@ ORDER BY Total_Cost DESC;
 ```sql
 SELECT 
 	room_type,
-    SUM(Amount_paid) AS total_revenue
+	SUM(Amount_paid) AS total_revenue
  FROM hostel_analysis.revenue_table
  GROUP BY room_type
  ORDER BY total_revenue DESC ;
 ```
-###This codes include the Total occupancy rate, Average occupancy rate per month and average occupancy rate per room.
+###This codes include the Total average occupancy rate, Average occupancy rate per month, year and average occupancy rate per room.
 ```sql
 #This is the total average occupancy rate of the entire hostel
 SELECT 
@@ -303,12 +302,53 @@ FROM occupancy_rate
 GROUP BY months
 ORDER BY average_occupancy_rate DESC;
 
+#This is the average occupancy rate per quarter of the entire hostel
+SELECT 
+        CASE
+            WHEN MONTH(DATE) IN (8, 9, 10) THEN CONCAT(YEAR(DATE), '-Q1')
+            WHEN MONTH(DATE) IN (11, 12, 1) THEN CONCAT(YEAR(DATE) - CASE WHEN MONTH(DATE) = 1 THEN 1 ELSE 0 END, '-Q2')
+            WHEN MONTH(DATE) IN (2, 3, 4) THEN CONCAT(YEAR(DATE) - 1, '-Q3')
+            ELSE CONCAT(YEAR(DATE) - 1, '-Q4')
+        END AS Fiscal_quarter,
+AVG(average_rate)
+FROM hostel_analysis.occupancy_rate
+GROUP BY Fiscal_quarter;
+
+#This is the average occupancy rate per year of the entire hostel
+SELECT 
+	Fiscal_year,
+	ROUND(AVG(Average_rate),2) AS total_average_rate
+FROM hostel_analysis.occupancy_rate
+GROUP BY Fiscal_year
+ORDER BY total_average_rate;
+
 #This is the average occupancy rate per room
 SELECT 
 	AVG(2_man_room_up) 2_man_room_up ,
 	AVG( 2_man_room_down) 2_man_room_down,
 	AVG(4_man_room) 4_man_room
 FROM hostel_analysis.occupancy_rate;
+```
+#### Annual retention rate of the entire hostel.
+```sql
+# codes returns the annual retention rate
+SELECT 
+	Fiscal_year,
+	ROUND(AVG(month_zero + month_one+ month_two + month_three + month_four + month_five + month_six + month_seven + month_eight + month_nine + month_ten + month_eleven)/12,2) AS total_average_retention
+FROM hostel_analysis.customer_retention_rate
+GROUP BY Fiscal_year
+ORDER BY Fiscal_year ASC;
+```
+#### Top 5 clients
+```sql
+#This are the top clients patronizing the business.
+SELECT 
+	client_name,
+	SUM(amount_paid) AS total_amount_paid
+FROM hostel_analysis.revenue_table
+GROUP BY Client_Name
+ORDER BY total_amount_paid DESC
+LIMIT 5;
 ```
 ### Data Vizualizations
 
@@ -329,9 +369,14 @@ FROM hostel_analysis.occupancy_rate;
 ### Result and Findings
 
 The analysis results are summarized as follows:
-1. the company's sales has been steadily increasing over the past year, with a noticeable peak during the holiday.
-2. Product cateogry A is the best performing ctegory in terms of sales and revenue
-3. customer segments with high lifetime valueshould be targeted for marketing purposes.
+1. The business revenue and profit has steadily been increasing over the past 3 years with a signifcant peak on average during the **Q2(November, December, January)**.
+2. The Highest peak for revenue generation on average is **October**
+3. There has been a steady increase in the operation and maintenance cost for the first two years, but on the third yeaar there was a significnt drop in the matainance cost while the Operation cost kept increasing.
+4. On average the **Q2(November, December, January)** has a higher operation expense while **Q3(February March, April)** has the highest for maintenance
+5. The peak months for Operation costs and maintenance cost are **January** and **December** respectively.
+6. Najority of the expenses on Maintenace goes to  **Electricty,Generator,Furniture,AC and Painting**, with **Electricity** taking a big part of this expense
+7. Product cateogry A is the best performing ctegory in terms of sales and revenue
+8. customer segments with high lifetime valueshould be targeted for marketing purposes.
 
 
 ## Recommendations
