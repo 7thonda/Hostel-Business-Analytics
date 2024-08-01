@@ -379,10 +379,10 @@ The analysis results are summarized as follows:
 8. Majority of the expenses on Operation goes to  **Fuel,Gas Downstairs,Light bill downstairs, Light bill upstairs, Gas upstairs**, with **Fuel** taking a big part of this expense.
 9. The *4 man room* is the best performing room in terms of revenue while the *2 man room upstairs* is the least performing.
 10. The total average occupancy rate of the entire business increases at a steady rate, with the current year at a all time high of *78.79%*
-11. On average the *4 man room* has the highest occupancy rate while the *2 man room upstairs has the least*.
+11. On average the **2 man room downstairs** has the highest occupancy rate while the **2 man room upstairs** has the least.
 12. The three rooms have their highest average occupncy rate during the **Q2(November, December, January)**
 13. The overall retention rate of the business on average is *66.70%*
-14. There has been a steady increase in the business customer retention rate on average with *2023* being an all time high at *94.17%*
+14. There has been a steady increase in the customer retention rate on average with *2023* being an all time high at *94.17%*
 15. The most loyal cohorts are those that join the hostel **June and March** with a *100%* retention rate.
 16. customer segments with high lifetime valueshould be targeted for marketing purposes.
 
@@ -390,18 +390,21 @@ The analysis results are summarized as follows:
 ## Recommendations
 
 Based on the analysis I recommend the following actions:
-1. The hostel should conduct a comprehensive check and maintenance of the premises during the months of August and September to ensure readiness for the arrival of new clients.
+1. The hostel should conduct a comprehensive check and maintenance of the premises during the months of **August and September** to ensure readiness for the arrival of new clients.
 2. Invest in marketing and promotion during peak revenue season ie. from **October to January** to maximize revenue.
 3. Alternative or cheaper vendors can be sourced to manage the rising cost of Operation.
-4. Rent should be increased by N10,000 per month for each room to balance out the increasing total percent of gross expenses.
 5. To offset the rising total percentage of gross expenses, the rent for each room should be increased by N10,000 per month.
-6. Focus and expanding and promoting products in category A.
-7. implement a customer segmentation strategy to target high LTV customers effectively.
+6. A survey should be created to find out the pain points why the **2 man room downstairs** is the most occupied on average and the **2 man room downstairs** is the least, so that it can be improved on or cut off depending on its effect on the general business.
+7. With a retention rate of *94.17%* and and occupancy rate of *78.79%* plans should be made for and expansion.
+8. The **4 man room** should be focused on taken as first priority when actions for improvements are concluded on and ready to commence.
+9. implement a customer segmentation strategy to target high LTV customers effectively.
 
 
 ## Limitations
-1. The Fiscal year starts in August not January.
-I had to remove all zero values from budget and revenue columns because they would have affected the accuracy of my conclusions from the analysis, There are still a few outliers even after the omission even then we can still that there is a positive correlation between both budget and number of votes with revenue.
+1. Fiscal Year Alignment: The fiscal year starting in August can complicate comparisons with standard calendar year-based datasets.
+2. Limited Historical Data: The data spans a limited number of fiscal years, which might not be sufficient to identify long-term trends or patterns.
+3. Missing Values: The dataset contains missing values in some months, which can affect the accuracy of average calculations and trend analysis.
+4. Implementation Costs: The financial impact of proposed rent increases or operational changes may not be fully considered.
+5. Maintenance and Upkeep: Regular checks and maintenance recommendations may not account for the actual condition and age of facilities, potentially leading to underestimation or overestimation of required work.
 
-## References
-1. customer retention rate
+
