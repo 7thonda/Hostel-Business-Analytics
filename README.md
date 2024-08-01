@@ -372,19 +372,31 @@ The analysis results are summarized as follows:
 1. The business revenue and profit has steadily been increasing over the past 3 years with a signifcant peak on average during the **Q2(November, December, January)**.
 2. The Highest peak for revenue generation on average is **October**
 3. There has been a steady increase in the operation and maintenance cost for the first two years, but on the third yeaar there was a significnt drop in the matainance cost while the Operation cost kept increasing.
-4. On average the **Q2(November, December, January)** has a higher operation expense while **Q3(February March, April)** has the highest for maintenance
-5. The peak months for Operation costs and maintenance cost are **January** and **December** respectively.
-6. Najority of the expenses on Maintenace goes to  **Electricty,Generator,Furniture,AC and Painting**, with **Electricity** taking a big part of this expense
-7. Product cateogry A is the best performing ctegory in terms of sales and revenue
-8. customer segments with high lifetime valueshould be targeted for marketing purposes.
+4. The constant incresing in operation cost is due to the current rise in inflation of the country.
+5. On average the **Q2(November, December, January)** has a higher operation expense while **Q3(February March, April)** has the highest for maintenance
+6. The peak months for Operation costs and maintenance cost are **January** and **December** respectively.
+7. Majority of the expenses on Maintenance goes to  **Electricty,Generator,Furniture,AC and Painting**, with **Electricity** taking a big part of this expense.
+8. Majority of the expenses on Operation goes to  **Fuel,Gas Downstairs,Light bill downstairs, Light bill upstairs, Gas upstairs**, with **Fuel** taking a big part of this expense.
+9. The *4 man room* is the best performing room in terms of revenue while the *2 man room upstairs* is the least performing.
+10. The total average occupancy rate of the entire business increases at a steady rate, with the current year at a all time high of *78.79%*
+11. On average the *4 man room* has the highest occupancy rate while the *2 man room upstairs has the least*.
+12. The three rooms have their highest average occupncy rate during the **Q2(November, December, January)**
+13. The overall retention rate of the business on average is *66.70%*
+14. There has been a steady increase in the business customer retention rate on average with *2023* being an all time high at *94.17%*
+15. The most loyal cohorts are those that join the hostel **June and March** with a *100%* retention rate.
+16. customer segments with high lifetime valueshould be targeted for marketing purposes.
 
 
 ## Recommendations
 
 Based on the analysis I recommend the following actions:
-1. Invest in marketing and promotion during peak sales season to maximize revenue.
-2. Focus and expanding and promoting products in category A.
-3. implement a customer segmentation strategy to target high LTV customers effectively.
+1. The hostel should conduct a comprehensive check and maintenance of the premises during the months of August and September to ensure readiness for the arrival of new clients.
+2. Invest in marketing and promotion during peak revenue season ie. from **October to January** to maximize revenue.
+3. Alternative or cheaper vendors can be sourced to manage the rising cost of Operation.
+4. Rent should be increased by N10,000 per month for each room to balance out the increasing total percent of gross expenses.
+5. To offset the rising total percentage of gross expenses, the rent for each room should be increased by N10,000 per month.
+6. Focus and expanding and promoting products in category A.
+7. implement a customer segmentation strategy to target high LTV customers effectively.
 
 
 ## Limitations
