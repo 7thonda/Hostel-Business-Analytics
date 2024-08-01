@@ -352,7 +352,7 @@ LIMIT 5;
 ```
 ### Data Vizualizations
 
-#### **Reveue Dashboard viz**
+#### **Revenue Dashboard viz**
 ![Screenshot_31-7-2024_184152_](https://github.com/user-attachments/assets/da16e8a0-cbac-4929-87a9-d4c6ca80804e)
 
 #### **Expenses Dashboard Viz**
