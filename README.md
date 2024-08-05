@@ -371,7 +371,7 @@ LIMIT 5;
 The analysis results are summarized as follows:
 1. The business revenue and profit has steadily been increasing over the past 3 years with a signifcant peak on average during the **Q2(November, December, January)**.
 2. The Highest peak for revenue generation on average is **October**
-3. There has been a steady increase in the operation and maintenance cost for the first two years, but on the third yeaar there was a significnt drop in the matainance cost while the Operation cost kept increasing.
+3. There has been a steady increase in the operation and maintenance cost for the first two years, but on the third year there was a significant drop in the matainance cost while the Operation cost kept increasing.
 4. The constant incresing in operation cost is due to the current rise in inflation of the country.
 5. On average the **Q2(November, December, January)** has a higher operation expense while **Q3(February March, April)** has the highest for maintenance
 6. The peak months for Operation costs and maintenance cost are **January** and **December** respectively.
@@ -393,8 +393,8 @@ Based on the analysis I recommend the following actions:
 1. The hostel should conduct a comprehensive check and maintenance of the premises during the months of **August and September** to ensure readiness for the arrival of new clients.
 2. Invest in marketing and promotion during peak revenue season ie. from **October to January** to maximize revenue.
 3. Alternative or cheaper vendors can be sourced to manage the rising cost of Operation.
-5. To offset the rising total percentage of gross expenses, the rent for each room should be increased by N10,000 per month.
-6. A survey should be created to find out the pain points why the **2 man room downstairs** is the most occupied on average and the **2 man room downstairs** is the least, so that it can be improved on or cut off depending on its effect on the general business.
+5. To offset the rising total percentage of gross expenses, the rent for each room should be increased by *N10,000* per month.
+6. A survey should be created to find out the pain points why the **2 man room downstairs** is the most occupied on average and the **2 man room Upstairs** is the least, so that it can be improved on or cut off depending on its effect on the general business.
 7. With a retention rate of *94.17%* and and occupancy rate of *78.79%* plans should be made for and expansion.
 8. The **4 man room** should be focused on taken as first priority when actions for improvements are concluded on and ready to commence.
 9. implement a customer segmentation strategy to target high LTV customers effectively.
